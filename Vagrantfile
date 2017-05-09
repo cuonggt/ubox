@@ -46,6 +46,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # SQLite
   config.vm.provision "shell", path: "./scripts/sqlite.sh"
 
+  # Blackfire
+  config.vm.provision "shell", path: "./scripts/blackfire.sh"
+
   # Memcached
   config.vm.provision "shell", path: "./scripts/memcached.sh"
 
@@ -55,6 +58,15 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # Beanstalkd
   config.vm.provision "shell", path: "./scripts/beanstalkd.sh"
 
+  # MailHog
+  config.vm.provision "shell", path: "./scripts/mailhog.sh"
+
   # Supervisord
   config.vm.provision "shell", path: "./scripts/supervisord.sh"
+
+  # ngrok
+  config.vm.provision "shell", path: "./scripts/ngrok.sh"
+
+  # Clean up
+  config.vm.provision "shell", path: "./scripts/clean.sh"
 end
