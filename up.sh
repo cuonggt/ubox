@@ -5,7 +5,7 @@ vagrant plugin install vagrant-reload
 vagrant plugin install dotenv
 
 # start with no machines
-# vagrant destroy -f
-# rm -rf .vagrant
+vagrant destroy -f
+rm -rf .vagrant
 
 vagrant up

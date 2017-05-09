@@ -40,6 +40,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # MySQL
   config.vm.provision "shell", path: "./scripts/mysql.sh", args: [ENV['MYSQL_VERSION'], ENV['MYSQL_PASSWORD']]
 
+  # PostgreSQL
+  config.vm.provision "shell", path: "./scripts/pgsql.sh", args: ['secret']
+
   # SQLite
   config.vm.provision "shell", path: "./scripts/sqlite.sh"
 
