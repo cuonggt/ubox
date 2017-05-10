@@ -47,7 +47,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.provision "shell", path: "./scripts/sqlite.sh"
 
   # Blackfire
-  config.vm.provision "shell", path: "./scripts/blackfire.sh"
+  config.vm.provision "shell", path: "./scripts/install-blackfire.sh"
 
   # Memcached
   config.vm.provision "shell", path: "./scripts/memcached.sh"

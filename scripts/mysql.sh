@@ -9,7 +9,8 @@ echo ">>> Installing MySQL Server $MYSQL_VERSION"
 debconf-set-selections <<< "mysql-server mysql-server/root_password password $MYSQL_PASSWORD"
 debconf-set-selections <<< "mysql-server mysql-server/root_password_again password $MYSQL_PASSWORD"
 
-if [ $MYSQL_VERSION == "5.6" ]; then
+if [ $MYSQL_VERSION == "5.6" ]
+then
     add-apt-repository -y ppa:ondrej/mysql-5.6
 
     apt-get update
