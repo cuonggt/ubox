@@ -32,40 +32,43 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.provision "shell", path: "./scripts/base_box_optimizations.sh"
 
   # PHP
-  config.vm.provision "shell", path: "./scripts/php.sh", args: [ENV['PHP_VERSION']]
+  config.vm.provision "shell", path: "./scripts/install-php.sh", args: [ENV['PHP_VERSION']]
+
+  # NodeJS
+  config.vm.provision "shell", path: "./scripts/install-nodejs.sh", args: [ENV['NODEJS_VERSION']]
 
   # Nginx
-  config.vm.provision "shell", path: "./scripts/nginx.sh"
+  config.vm.provision "shell", path: "./scripts/install-nginx.sh"
 
   # MySQL
-  config.vm.provision "shell", path: "./scripts/mysql.sh", args: [ENV['MYSQL_VERSION'], ENV['MYSQL_PASSWORD']]
+  config.vm.provision "shell", path: "./scripts/install-mysql.sh", args: [ENV['MYSQL_VERSION'], ENV['MYSQL_PASSWORD']]
 
   # PostgreSQL
-  config.vm.provision "shell", path: "./scripts/pgsql.sh", args: ['secret']
+  # config.vm.provision "shell", path: "./scripts/install-pgsql.sh", args: ['secret']
 
   # SQLite
-  config.vm.provision "shell", path: "./scripts/sqlite.sh"
+  # config.vm.provision "shell", path: "./scripts/install-sqlite.sh"
 
   # Blackfire
   config.vm.provision "shell", path: "./scripts/install-blackfire.sh"
 
   # Memcached
-  config.vm.provision "shell", path: "./scripts/memcached.sh"
+  config.vm.provision "shell", path: "./scripts/install-memcached.sh"
 
   # Redis
-  config.vm.provision "shell", path: "./scripts/redis.sh"
+  config.vm.provision "shell", path: "./scripts/install-redis.sh"
 
   # Beanstalkd
-  config.vm.provision "shell", path: "./scripts/beanstalkd.sh"
+  config.vm.provision "shell", path: "./scripts/install-beanstalkd.sh"
 
   # MailHog
-  config.vm.provision "shell", path: "./scripts/mailhog.sh"
+  config.vm.provision "shell", path: "./scripts/install-mailhog.sh"
 
   # Supervisord
-  config.vm.provision "shell", path: "./scripts/supervisord.sh"
+  config.vm.provision "shell", path: "./scripts/install-supervisord.sh"
 
   # ngrok
-  config.vm.provision "shell", path: "./scripts/ngrok.sh"
+  config.vm.provision "shell", path: "./scripts/install-ngrok.sh"
 
   # Clean up
   config.vm.provision "shell", path: "./scripts/clean.sh"
